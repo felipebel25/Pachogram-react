@@ -1,6 +1,6 @@
 import React from 'react'
 import { ListOfCategories } from './components/ListOfCategory/index'
-import { GlobalStyle } from './GlobalStyles'
+import { GlobalStyle } from './styles/GlobalStyles'
 import { ListOfPhotoCards } from './components/ListOfPhotoCards/index'
 import Logo from './components/logos/index.js'
 const App = () => {

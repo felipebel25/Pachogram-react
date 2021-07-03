@@ -1,17 +1,10 @@
-import styled, { css, keyframes } from 'styled-components'
-const fadeInKeyframes = keyframes`
-from{
-    filter: blur(5px);
-    opacity: 0;
+import styled, { css } from 'styled-components'
 
-}
-to{
-    filter: blur(0);
-    opacity: 1;
-}
+import { fadeIn } from '../../styles/animation'
+
+export const Article = styled.article`
+    min-height: 200px;
 `
-const fadeIn = ({ time = '1s', type = 'ease' } = {}) =>
-  css`  animation: ${time} ${fadeInKeyframes} ${type};`
 export const ImgWrapper = styled.div`
     display:block ;
     border-radius: 10px;
@@ -22,7 +15,7 @@ export const ImgWrapper = styled.div`
     width: 100%;
 `
 export const Img = styled.img`
-  ${fadeIn({ time: '5s' })}
+    ${fadeIn()}
     box-shadow:0 10px 14px rgba(0 , 0 , 0, .2);
     height: 100%;
     object-fit: cover;
@@ -32,11 +25,22 @@ export const Img = styled.img`
 `
 
 export const Button = styled.button`
-    padding: 8px;
-    display: flex;
-    align-items: center;
-    & svg{
-        margin-right: 4px ;
+  display: flex;
+  align-items: center;
+  padding-top: 5px;
+  width: 100%;
+  padding: 0 15px;
+  box-shadow: 0 30px 35px #e5e5e5;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  & svg {
+    margin-right: 4px;
+    color: red;
+    width: 23px;
+    ${
+      props => props.liked && css`
+        color: red
+        ${fadeIn()}`
     }
-
+  }
 `

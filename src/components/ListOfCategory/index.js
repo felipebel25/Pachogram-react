@@ -8,7 +8,7 @@ const useCategoriesData = () => {
   const [loading, setLoading] = useState(false)
 
   useEffect(() => {
-    window.fetch('https://miaugram-ck5pinh0n-felipebel25.vercel.app/categories')
+    window.fetch('https://miaugram-6jbh1mfss-felipebel25.vercel.app/categories')
       .then(response => response.json())
       .then(response => {
         setCategories(response)
@@ -34,7 +34,7 @@ export const ListOfCategories = () => {
       <List fixed={fixed}>
         {!loading
           ? <Item key='loading'><Category /></Item>
-          : categories.map(category => <Item key={category.id}> <Category {...category} /> </Item>)}
+          : categories.map(category => <Item key={category.id}> <Category {...category} path={`/pet/${category.id}`} /> </Item>)}
       </List>
     )
   }

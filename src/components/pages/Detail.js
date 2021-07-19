@@ -1,10 +1,13 @@
 import React from 'react'
 import { PhotoCardWithQuery } from '../container/PhotoCardWithQuery'
-
+import Layout from '../Layout/index'
 const Detail = ({ detailId }) => {
   return (
     <div>
-      <PhotoCardWithQuery id={detailId} />
+      <Layout title={`Fotografia ${detailId}`} subtitle={`Fotografia ${detailId}`}>
+
+        <PhotoCardWithQuery id={detailId} />
+      </Layout>
     </div>
   )
 }

@@ -1,14 +1,17 @@
 import React from 'react'
 import { ListOfCategories } from '../ListOfCategory/index'
 import { ListOfPhotoCards } from '../ListOfPhotoCards/index'
-
-const Home = ({ categoryId }) => {
+const HomePage = ({ categoryId }) => {
   return (
     <>
+
       <ListOfCategories />
       <ListOfPhotoCards categoryId={categoryId} />
     </>
   )
 }
 
-export default Home
+export const Home = React.memo(HomePage, (prevProps, props) => {
+  return prevProps.categoryId === props.categoryId
+}
+)

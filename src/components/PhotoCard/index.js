@@ -1,41 +1,42 @@
 import React from 'react'
 import { Article, ImgWrapper, Img, Link } from './styles'
 import FavButton from '../FavButton'
-import { useLocalStorage } from '../../hooks/useLocalStorage'
 import { useIntersectionObserver } from '../../hooks/useIntersectionObserver'
 import { useMutationToogleLike } from '../container/ToggleLikeMutation'
+const DEFAULT_IMAGE = 'https://static.platzi.com/media/user_upload/1-529ffe30-c9e7-4b5d-a340-f2b84b2aa145.jpg'
 export const PhotoCard = ({
   id,
+  liked,
   likes = 0,
-  src
+  src = DEFAULT_IMAGE
 }) => {
   const [show, ref] = useIntersectionObserver()
-  const key = `like-${id}`
-  const [liked, setLiked] = useLocalStorage(key, false)
+
   const { mutation, mutationLoading, mutationError } = useMutationToogleLike()
 
   const handleFavClick = () => {
-    !liked && mutation({
+    mutation({
       variables: {
         input: { id }
       }
     })
-    setLiked(!liked)
   }
   console.log(mutation, mutationLoading, mutationError)
   return (
     <Article ref={ref}>
       {
-          show &&
-            <>
-              <Link to={`/detail/${id}`}>
-                <ImgWrapper>
-                  <Img src={src} alt='shi' />
-                </ImgWrapper>
-              </Link>
-              <FavButton liked={liked} likes={likes} onClick={handleFavClick} />
+        show &&
+          <>
+            {mutationError && <h1>hey Registrate o inicia sesion</h1>}
 
-            </>
+            <Link to={`/detail/${id}`}>
+              <ImgWrapper>
+                <Img src={src} alt='shi' />
+              </ImgWrapper>
+            </Link>
+            <FavButton liked={liked} likes={likes} onClick={handleFavClick} />
+
+          </>
         }
 
     </Article>

@@ -1,12 +1,13 @@
 
-import { useMutation, gql } from '@apollo/client'
+import { gql, useMutation } from '@apollo/client'
 
 const REGISTER = gql`
-mutation signup ($input: UserCredentials!) {
-    signup (input: $input)
-}
+    mutation signup($input: UserCredentials!){
+        signup(input: $input)
+    }
 `
-export const useRegisterMutations = () => {
-  const [mutation, { loading: mutationLoading, error: mutationError }] = useMutation(REGISTER)
-  return { mutation, mutationLoading, mutationError }
+export const useRegisterMutation = () => {
+  const [registerMutation, { data, loading, error }] = useMutation(REGISTER)
+  console.log(registerMutation)
+  return { registerMutation, data, error, loading }
 }

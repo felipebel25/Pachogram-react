@@ -11,6 +11,7 @@ const useCategoriesData = () => {
     window.fetch('https://miaugram-6jbh1mfss-felipebel25.vercel.app/categories')
       .then(response => response.json())
       .then(response => {
+        console.log(response)
         setCategories(response)
         setLoading(true)
       })
@@ -18,7 +19,7 @@ const useCategoriesData = () => {
   return { categories, loading }
 }
 
-export const ListOfCategories = () => {
+const ListOfCategoriesComponent = () => {
   const { categories, loading } = useCategoriesData()
   const [showFixed, setShowFixed] = useState(false)
   useEffect(function () {
@@ -47,3 +48,7 @@ export const ListOfCategories = () => {
     </>
   )
 }
+export const ListOfCategories = React.memo(
+  ListOfCategoriesComponent
+
+)

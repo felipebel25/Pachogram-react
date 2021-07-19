@@ -11,13 +11,13 @@ const withPhotos = gql`
         likes
         userId
         liked
-        
         }
     }`
 
 export const ListOfPhotoCards = ({ categoryId }) => {
   const { loading, error, data = { photos: {} } } = useQuery(withPhotos, { variables: { categoryId: categoryId } })
   const { photos } = data
+  console.log(data)
   if (error) {
     return <h2>Internal Server Error</h2>
   }

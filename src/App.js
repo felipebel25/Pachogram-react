@@ -7,6 +7,8 @@ import { Home } from './components/pages/Home'
 import Detail from './components/pages/Detail'
 import Navbar from './Navbar'
 import NotRegister from './components/pages/NotRegister'
+import NotRegisterRegister from './components/pages/NotRegisterRegister'
+
 import User from './components/pages/User'
 import NotFound from './components/pages/NotFound'
 // styles
@@ -32,7 +34,9 @@ export const App = () => {
         {!isAuth && <Redirect noThrow from='/favs' to='/login' />}
         {!isAuth && <Redirect noThrow from='/user' to='/login' />}
         {isAuth && <Redirect from='/login' to='/' />}
+        {isAuth && <Redirect from='/register' to='/' />}
 
+        <NotRegisterRegister path='/register' />
         <Favs path='/favs' />
         <User path='/user' />
 

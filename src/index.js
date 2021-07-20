@@ -38,7 +38,7 @@ const client = new ApolloClient({
     errorMiddleware,
     authMiddleware,
     new HttpLink({
-      uri: 'https://miaugram-6jbh1mfss-felipebel25.vercel.app/graphql'
+      uri: 'https://miaugram-93qmjxkt4-felipebel25.vercel.app/graphql'
     })
   ]),
   cache: new InMemoryCache()

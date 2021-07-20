@@ -8,7 +8,7 @@ const useCategoriesData = () => {
   const [loading, setLoading] = useState(false)
 
   useEffect(() => {
-    window.fetch('https://miaugram-6jbh1mfss-felipebel25.vercel.app/categories')
+    window.fetch('https://miaugram-93qmjxkt4-felipebel25.vercel.app/categories')
       .then(response => response.json())
       .then(response => {
         console.log(response)

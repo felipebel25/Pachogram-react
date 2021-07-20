@@ -12,12 +12,13 @@ export const Link = styled(LinkRouter)`
 export const Form = styled.form`
  display: flex;
  flex-direction: column;
- height: 100vh;
+ height: 100%;
 `
 export const Input = styled.input`
  margin: 0 auto;
  width: 84%;
  height: 6vh;
+ font-size: 20px;
  margin-bottom:6.6%;
  &::placeholder {
      padding-left:2%;

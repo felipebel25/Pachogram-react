@@ -8,7 +8,6 @@ const ListOfFavs = ({ favs = [] }) => {
       {favs.map(fav => (
         <Link key={fav.id} to={`/detail/${fav.id}`}>
           <Image src={fav.src} />
-
         </Link>
       ))}
     </Grid>

@@ -4,7 +4,8 @@ import Layout from '../Layout/index'
 const Detail = ({ detailId }) => {
   return (
     <div>
-      <Layout title={`Fotografia ${detailId}`} subtitle={`Fotografia ${detailId}`}>
+
+      <Layout title={`Fotografia ${detailId}🙀 `}>
 
         <PhotoCardWithQuery id={detailId} />
       </Layout>

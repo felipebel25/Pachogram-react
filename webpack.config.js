@@ -25,7 +25,7 @@ module.exports = {
       shortname: 'pachito',
       description: 'Pachogram galeria de fotos domesticos guaus y miaus',
       background_color: '#fff',
-      theme_color: '#b1a',
+      theme_color: '#5838a8',
       display: 'standalone',
       scope: '/',
       start_url: '/',

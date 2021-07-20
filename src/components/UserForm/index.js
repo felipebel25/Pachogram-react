@@ -2,7 +2,7 @@ import React from 'react'
 // hook
 import useInputValue from '../../hooks/useInputValue'
 // style
-import { Form, Input, Img, Text, Button, Spinner, Anchor } from './styles'
+import { Form, Input, Img, Text, Button, Spinner, Link } from './styles'
 
 const UserForm = ({ onSubmit, title, text, id, error, disabled }) => {
   const GATO_IMAGE = 'https://pbs.twimg.com/profile_images/1159519350925201408/lgjd_Phv_400x400.jpg'
@@ -24,7 +24,7 @@ const UserForm = ({ onSubmit, title, text, id, error, disabled }) => {
         <Button disabled={disabled}>{title}</Button>
         {disabled && <Spinner />}
         {title === 'Iniciar Sesion' && <div>
-          <Text>¿No tienes una cuenta?<Anchor href='#si'> Registrate</Anchor></Text>
+          <Text>¿No tienes una cuenta?<Link to='/register'> Registrate</Link></Text>
         </div>}
 
       </Form>

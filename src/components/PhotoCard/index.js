@@ -3,7 +3,7 @@ import { Article, ImgWrapper, Img, Link } from './styles'
 import FavButton from '../FavButton'
 import { useIntersectionObserver } from '../../hooks/useIntersectionObserver'
 import { useMutationToogleLike } from '../container/ToggleLikeMutation'
-const DEFAULT_IMAGE = 'https://static.platzi.com/media/user_upload/1-529ffe30-c9e7-4b5d-a340-f2b84b2aa145.jpg'
+const DEFAULT_IMAGE = 'https://i.redd.it/3dgt99qr8ky41.jpg'
 export const PhotoCard = ({
   id,
   liked,

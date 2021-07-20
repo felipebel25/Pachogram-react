@@ -31,6 +31,7 @@ export const List = styled.ul`
     display: flex;
     overflow-x: scroll;
     width: 100%;
+    margin-bottom: 8%;
     &::-webkit-scrollbar {
     display: none}
     ${props => props.fixed && css`

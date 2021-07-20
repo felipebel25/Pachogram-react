@@ -4,7 +4,7 @@ import { Link as LinkRouter } from '@reach/router'
 import { fadeIn } from '../../styles/animation'
 
 export const Article = styled.article`
-    min-height: 200px;
+    min-height: 37vh;
 `
 export const ImgWrapper = styled.div`
     display:block ;

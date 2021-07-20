@@ -1,7 +1,7 @@
 import React from 'react'
 import { useQuery, gql } from '@apollo/client'
 import { PhotoCard } from '../PhotoCard'
-
+import { ListOfPhotoCardUl } from './style'
 const withPhotos = gql`
     query getPhotos($categoryId: ID){
     photos(categoryId : $categoryId){
@@ -25,10 +25,12 @@ export const ListOfPhotoCards = ({ categoryId }) => {
     return <h2>Loading...</h2>
   }
   return (
-    <ul>
-      {photos.map((photo) => (
-        <PhotoCard key={photo.id} {...photo} />
-      ))}
-    </ul>
+    <>
+      <ListOfPhotoCardUl>
+        {photos.map((photo) => (
+          <PhotoCard key={photo.id} {...photo} />
+        ))}
+      </ListOfPhotoCardUl>
+    </>
   )
 }

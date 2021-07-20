@@ -69,3 +69,10 @@ height: 36px;
   margin:auto;
  animation: spin 1s ease infinite;
 `
+export const Anchor = styled.a`
+    color: #a52658;
+    font-weight: 500;
+    font-size: 17px;
+    text-decoration: none;
+
+`

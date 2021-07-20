@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 
 import useGetFavorites from '../container/GetFavs'
-import ListOfFavs from '../ListOfFavs'
+import ListOfFavs from '../ListOfFavs/index'
 import Layout from '../Layout/index'
 
 const Favs = () => {

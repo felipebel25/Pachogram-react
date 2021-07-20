@@ -15,17 +15,17 @@
         <h3>Esta app necesita Javascript para su función xd</h3>
     </noscript>
     <script>
-        if('serviceWorker' in navigator){
-           window.addEventListener('load', function(){
-               navigator.serviceWorker.register('/service-worker.js')
-                .then(registration =>{
-                    console.log('registrado')
-                })
-                .catch(error=>{
-                    console.log('error ' , error);
-                })
-           }) 
-        }
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', function () {
+        navigator.serviceWorker.register('/service-worker.js')
+          .then(registration => {
+            console.log('SW registrado')
+          })
+          .catch(registrationError => {
+            console.log('SW error', registrationError)
+          })
+      })
+    }
     </script>
 </body>
 </html>

@@ -9,7 +9,6 @@ import Navbar from './Navbar'
 import NotRegister from './components/pages/NotRegister'
 import User from './components/pages/User'
 import NotFound from './components/pages/NotFound'
-import { Spinner } from './components/UserForm/styles'
 // styles
 import Logo from './components/logos/index.js'
 import { GlobalStyle } from './styles/GlobalStyles'
@@ -21,7 +20,7 @@ const Favs = React.lazy(() => import('./components/pages/Favs'))
 export const App = () => {
   const { isAuth } = useContext(Context)
   return (
-    <Suspense fallback={Spinner}>
+    <Suspense fallback={<div />}>
       <GlobalStyle />
       <Logo />
       <Router>
